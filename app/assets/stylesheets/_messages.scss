@@ -149,21 +149,24 @@
       }
     }
   }
-  &__group-list {
+  &__groups-list {
     height: calc(100vh - 100px);
     width: 300px;
     padding: 20px 20px 0px;
-    &__one {
+    &__group {
       margin-bottom: 40px;
-      &__group-show {
+      .link {
+        text-decoration: none;
+      }
+      &__name {
         padding-top: 20px;
         padding-bottom: 5px;
         font-size: 15px;
-        color: #ffffff;
+        color:#ffffff;
       }
-      &__group-message {
+      &__message {
         font-size: 11px;
-        color: #ffffff;
+        color:#ffffff;
       }
     }
   } 
