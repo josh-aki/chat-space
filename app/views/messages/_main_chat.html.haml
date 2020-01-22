@@ -34,14 +34,11 @@
   
   
   .chat-main__form
-    %form.new_message
-      .input-box
-        %input{type: "text", class:"input-box__text", placeholder:"type a message"} 
-        %label{class: "input-box__image"}
-          =icon('fas', 'image')
-          %input{type: "file", class:"input-box__image__file"}
-      %input{type: "submit", class:"submit-btn", value: "Send"}
-      
-      
-      
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .chat-main__form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
      
