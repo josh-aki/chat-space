@@ -13,6 +13,9 @@ $(function(){
             </div>
           </div>
           <div class="chat-main__message-list__text">
+            <p class="lower-message__content">
+              ${message.content}
+            </p>
             <img class="lower-message__image" src=${message.image} >
           </div>
         </div>`
@@ -39,6 +42,7 @@ $(function(){
   }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
+
     var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
@@ -69,7 +73,6 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log(messages);
       if (messages.length !== 0) {
         var insertHTML = '';
         $.each(messages, function(i, message) {
